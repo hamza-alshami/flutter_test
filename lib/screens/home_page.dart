@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,22 +24,22 @@ class HomeScreen extends StatelessWidget {
           children: [
             Padding(padding: EdgeInsets.all(5)),
 
-            CountinerWidget(
+            CounterWidget(
               name: "Number",
               color: Colors.orange,
             ),
             SizedBox(height: 20),
-            CountinerWidget(
+            CounterWidget(
               name: "Family",
               color: Colors.green,
             ),
             SizedBox(height: 20),
-            CountinerWidget(
+            CounterWidget(
               name: "Colors",
               color: Colors.purple,
             ),
             SizedBox(height: 20),
-            CountinerWidget(
+            CounterWidget(
               name: "Phrases",
               color: Colors.cyan,
             ),
@@ -51,8 +50,9 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
-class CountinerWidget extends StatelessWidget {
-  CountinerWidget({this.name, this.color});
+// ignore: must_be_immutable
+class CounterWidget extends StatelessWidget {
+  CounterWidget({this.name, this.color});
 
   String? name;
   Color? color;
