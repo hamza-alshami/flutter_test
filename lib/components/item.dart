@@ -1,18 +1,21 @@
-import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:language_app_basic/models/number_model.dart';
 
 class Item extends StatelessWidget {
-  const Item({super.key, required this.number});
+  const Item({
+    super.key,
+    required this.number,
+    required this.color,
+  });
 
-  final Number number;
-  
+  final ItemModel number;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 100,
-      color: Colors.orangeAccent,
+      color: color,
       child: Row(
         children: [
           Container(
@@ -22,6 +25,7 @@ class Item extends StatelessWidget {
           Padding(padding: EdgeInsets.only(left: 10)),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 number.jpName,
@@ -30,6 +34,7 @@ class Item extends StatelessWidget {
                   fontSize: 25,
                   fontWeight: FontWeight.bold,
                 ),
+                textAlign: TextAlign.left,
               ),
               Text(
                 number.enName,
@@ -37,6 +42,7 @@ class Item extends StatelessWidget {
                   color: Colors.white,
                   fontSize: 20,
                 ),
+                textAlign: TextAlign.left,
               ),
             ],
           ),
@@ -46,7 +52,7 @@ class Item extends StatelessWidget {
             padding: const EdgeInsets.only(right: 8),
             child: IconButton(
               onPressed: () {
-                  number.playSound();
+                number.playSound();
               },
               icon: const Icon(
                 Icons.play_arrow,

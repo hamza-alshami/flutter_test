@@ -1,12 +1,12 @@
 import 'package:audioplayers/audioplayers.dart';
 
-class Number {
+class ItemModel {
   final String img;
   final String jpName;
   final String enName;
   final String audio;
 
-  const Number({
+  const ItemModel({
     required this.img,
     required this.jpName,
     required this.enName,
@@ -17,4 +17,3 @@ class Number {
     player.play(AssetSource(audio));
   }
 }
-

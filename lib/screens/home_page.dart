@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:language_app_basic/screens/family_page.dart';
 import 'package:language_app_basic/screens/number_page.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -42,6 +43,16 @@ class HomeScreen extends StatelessWidget {
             CounterWidget(
               name: "Family",
               color: Colors.green,
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (BuildContext) {
+                      return FamilyPage();
+                    },
+                  ),
+                );
+              },
             ),
             SizedBox(height: 20),
             CounterWidget(
